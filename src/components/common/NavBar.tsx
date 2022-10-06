@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { memo } from 'react'
 import { Route } from '../../types'
 import { basicHoverTapScale } from '../../utils/animation'
-import Logo from './Logo'
+//import Logo from './Logo'
 import MaskSvg from './MaskSvg'
 import ThemeToggler from './theme-toggler/ThemeToggler'
 
@@ -29,25 +29,17 @@ export const NavBar = memo<Props>(({ routes }) => {
         <Link href="/">
           <motion.a
             className="hidden cursor-pointer dark:hidden sm:block"
-            whileHover={basicHoverTapScale.hover}
-            whileTap={basicHoverTapScale.tap}
-            transition={{ duration: basicHoverTapScale.duration }}
           >
-            <Logo color="black" />
           </motion.a>
         </Link>
         <Link href="/">
           <motion.a
             className="hidden cursor-pointer dark:sm:block"
-            whileHover={basicHoverTapScale.hover}
-            whileTap={basicHoverTapScale.tap}
-            transition={{ duration: basicHoverTapScale.duration }}
           >
-            <Logo color="white" />
           </motion.a>
         </Link>
         <div className="flex h-12 items-center justify-center gap-3">
-          <nav className="z-0 flex h-full rounded-xl bg-jurrelightgray dark:bg-jurredarklight">
+          <nav className="z-0 flex h-full rounded-xl bg-slate-300 dark:bg-slate-800">
             {routes.map((route) => (
               <div
                 key={route.path}
@@ -61,7 +53,7 @@ export const NavBar = memo<Props>(({ routes }) => {
                 {pathname === route.path ||
                 (pathname.startsWith(route.path) && route.path !== '/') ? (
                   <motion.div
-                    className="absolute left-0 top-0 right-0 bottom-0 -z-10 m-auto h-[80%] w-[85%] rounded-lg bg-white dark:bg-jurredark"
+                    className="absolute left-0 top-0 right-0 bottom-0 -z-10 m-auto h-[80%] w-[85%] rounded-lg bg-slate-300 dark:bg-slate-800"
                     layoutId="active"
                     transition={{ type: 'spring', stiffness: 270, damping: 30 }}
                   />

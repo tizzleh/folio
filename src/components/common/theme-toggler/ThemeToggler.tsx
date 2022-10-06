@@ -20,14 +20,14 @@ const ThemeToggler = () => {
     <motion.div className="cursor-pointer" whileHover="hover">
       {theme === 'light' || (theme === 'system' && systemTheme === 'light') ? (
         <div
-          className="rounded-2xl bg-jurrelightgray p-4"
+          className="rounded-2xl bg-tylightgray p-4"
           onClick={() => setTheme('dark')}
         >
           <MoonIcon firstRender={firstRender.current} />
         </div>
       ) : theme === 'dark' ? (
         <div
-          className="rounded-2xl bg-jurredarklight p-4"
+          className="rounded-2xl bg-tydarklight p-4"
           onClick={() => setTheme('light')}
         >
           <SunIcon firstRender={firstRender.current} />
